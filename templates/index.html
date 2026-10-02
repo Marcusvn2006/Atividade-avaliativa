@@ -15,10 +15,18 @@
             <a class="navbar-brand" href="/">Calculadora de IMC</a>
             <ul class="navbar-nav ms-auto flex-row gap-3">
                 <li class="nav-item"><a class="nav-link" href="/">Calculadora</a></li>
-                <li class="nav-item"><a class="nav-link" href="/equipe">Equipe</a></li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>  
             </ul>
         </div>
     </nav>
+
+    {% for error in error %}
+    <div class="alert alert-danger" role="alert">
+        {{error}}
+    </div>
+    {% endfor %}
 
     <div class="container my-4">
         <h1 class="mb-4">Calculadora de IMC</h1>
@@ -33,29 +41,29 @@
                     </div>
                     <div class="mb-3">
                         <label for="peso" class="form-label">Peso (kg)</label>
-                        <input type="number" class="form-control" id="peso" name="peso" step="0.01" min="1" max="300"
+                        <input type="number" class="form-control" id="peso" name="peso" step="0.01" 
                             required>
                     </div>
                     <div class="mb-3">
                         <label for="altura" class="form-label">Altura (m)</label>
-                        <input type="number" class="form-control" id="altura" name="altura" step="0.01" min="0.5"
-                            max="2.5" required>
+                        <input type="number" class="form-control" id="altura" name="altura" step="0.01"  required>
                     </div>
                     <button type="submit" class="btn btn-primary">Calcular IMC</button>
                 </form>
             </div>
         </div>
-
-        <div class="card mt-4">
+        {% if resultado%}
+        <div class="card mt-4"> 
             <div class="card-header">Resultado</div>
             <div class="card-body">
-                <div class="alert alert-success mb-0" role="alert">
+                <div class="alert alert-{{mode}} mb-0" role="alert">
                     <h4 class="alert-heading">Nome da pessoa</h4>
-                    <p class="mb-1">Seu IMC é <strong>00,00</strong></p>
-                    <p class="mb-0">Faixa: <strong>Nome da faixa</strong></p>
+                    <p class="mb-1">Seu IMC é <strong>{{ "%.2f" | format(resultadoIMC) }}</strong></p>
+                    <p class="mb-0">Faixa: <strong>{{ resultado }}</strong></p> 
                 </div>
             </div>
-        </div>
+        </div>  
+        {% endif %}
     </div>
 </body>
 

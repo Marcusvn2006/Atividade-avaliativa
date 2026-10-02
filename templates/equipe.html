@@ -11,12 +11,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="/">Calculadora de IMC</a>
+            <a class="navbar-brand" href="{{ url_for('pagina_inicial') }}">Calculadora de IMC</a>
             <ul class="navbar-nav ms-auto flex-row gap-3">
-                <li class="nav-item"><a class="nav-link" href="/">Calculadora</a></li>
-                <li class="nav-item"><a class="nav-link" href="/equipe">Equipe</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('pagina_inicial') }}">Calculadora</a></li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('equipe') }}">Equipe</a></li>
             </ul>
         </div>
     </nav>
@@ -26,7 +28,8 @@
 
         <div class="card mb-4">
             <div class="card-body text-center">
-                <img src="dupla.jpg" class="img-fluid rounded" alt="Foto da dupla">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnoKiAqUkvUzvgKD8W0PegFDJvoqlcjt2lPWXP1uXkUhmZvLqe1NO2KBk&s=10"
+                    class="img-fluid rounded" alt="Foto da dupla">
             </div>
         </div>
 
@@ -35,8 +38,8 @@
                 <div class="card h-100">
                     <div class="card-header">Integrante 1</div>
                     <div class="card-body">
-                        <p class="mb-1"><strong>Nome:</strong> Nome Completo do Integrante 1</p>
-                        <p class="mb-0"><strong>RA:</strong> 0000000000000</p>
+                        <p class="mb-1"><strong>Nome:</strong> Marcus Vinicius Avanso Romao</p>
+                        <p class="mb-0"><strong>RA:</strong> n sei bb</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +47,7 @@
                 <div class="card h-100">
                     <div class="card-header">Integrante 2</div>
                     <div class="card-body">
-                        <p class="mb-1"><strong>Nome:</strong> Nome Completo do Integrante 2</p>
+                        <p class="mb-1"><strong>Nome:</strong> Lucas Coutinho Navarrias</p>
                         <p class="mb-0"><strong>RA:</strong> 0000000000000</p>
                     </div>
                 </div>
@@ -57,7 +60,8 @@
                 <p class="mb-1"><strong>Curso:</strong> Tecnologia em Gestão da Tecnologia da Informação</p>
                 <p class="mb-1"><strong>Semestre:</strong> 2º semestre</p>
                 <p class="mb-0"><strong>Repositório:</strong> <a
-                        href="https://github.com/usuario/repositorio">https://github.com/usuario/repositorio</a></p>
+                        href="https://github.com/Marcusvn2006/Atividade-avaliativa">https://github.com/Marcusvn2006/Atividade-avaliativa</a>
+                </p>
             </div>
         </div>
     </div>
