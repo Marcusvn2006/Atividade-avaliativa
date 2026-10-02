@@ -25,15 +25,14 @@ def pagina_inicial():
             error.append("Coloque algum altura")
         if not error:
             resultadoIMC = peso /  (altura * altura )    
-        if resultadoIMC < 18.5:
+        if resultadoIMC > 18.5:
             mode = 'primary'
             resultado = "abaixo do peso"
-        elif resultadoIMC <18.5 or resultadoIMC > 25:
+        elif resultadoIMC > 18.5 or resultadoIMC < 25:
             mode = "success"
             resultado = " Peso normal"
 
-        elif resultadoIMC <25 or resultadoIMC > 30:
-
+        elif resultadoIMC > 25 or resultadoIMC < 30:
             resultado = "Sobrepeso"
             mode = "warning"
         elif resultadoIMC <30:
